@@ -17,6 +17,15 @@
 
 <!--     hbm2ddl -> hibernate to data Defination language    -->
         <property name="hibernate.hbm2ddl.auto">update</property>
+        
+<!--     Showing the SQL Query that are running behind the scene   -->
+        <property name="hibernate.show_sql">true</property>
+<!--        Mentioning the dialect, It's not mandatory-->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+
+<!--    Formating the SQL Query    -->
+        <property name="hibernate.format_sql">true</property>
 
         
         

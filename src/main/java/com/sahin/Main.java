@@ -9,8 +9,8 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
         Student s1 = new Student();
-        s1.setsName("Sahin");
-        s1.setRollNo(626);
+        s1.setsName("Jeet");
+        s1.setRollNo(003);
         s1.setsAge(22);
 
 
