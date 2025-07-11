@@ -9,23 +9,28 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
         Student s1 = new Student();
-        s1.setsName("Jeet");
-        s1.setRollNo(003);
-        s1.setsAge(22);
+        s1.setsName("Rishu");
+        s1.setRollNo(4);
+        s1.setsAge(21);
 
 
-        Configuration config = new Configuration();
-        config.addAnnotatedClass(com.sahin.Student.class);
-        config.configure(); //this file loads the xml
+//        Configuration config = new Configuration();
+//        config.addAnnotatedClass(com.sahin.Student.class);
+//        config.configure(); //this file loads the xml
 
 
-        SessionFactory sf = config.buildSessionFactory();
+        SessionFactory sf =  new Configuration()
+                    .addAnnotatedClass(com.sahin.Student.class)
+                .configure()
+                        .buildSessionFactory();             //config.buildSessionFactory();
         Session session = sf.openSession();
 
         Transaction transaction = session.beginTransaction(); //Transaction is an interface, For that we to call `session.beginTransaction();` it returns a Transaction Object!
 
         session.persist(s1);
         transaction.commit();
+        session.close();
+        sf.close();
 
 
         System.out.println(s1);
