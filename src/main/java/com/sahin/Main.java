@@ -12,6 +12,7 @@ public class Main {
         s1.setsName("Rishu");
         s1.setRollNo(4);
         s1.setsAge(21);
+        Student s2 = null;
 
 
 //        Configuration config = new Configuration();
@@ -25,14 +26,23 @@ public class Main {
                         .buildSessionFactory();             //config.buildSessionFactory();
         Session session = sf.openSession();
 
-        Transaction transaction = session.beginTransaction(); //Transaction is an interface, For that we to call `session.beginTransaction();` it returns a Transaction Object!
+//        Transaction transaction = session.beginTransaction(); //Transaction is an interface, For that we to call `session.beginTransaction();` it returns a Transaction Object!
 
-        session.persist(s1);
-        transaction.commit();
+            //Save data into DB;
+//        session.persist(s1);
+
+        s2 = session.find(Student.class,4);
+
+
+
+//        transaction.commit();
+
+
+
         session.close();
         sf.close();
 
 
-        System.out.println(s1);
+        System.out.println(s2);
     }
 }
