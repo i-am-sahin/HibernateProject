@@ -9,8 +9,8 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
         Student s1 = new Student();
-        s1.setsName("Rishu");
-        s1.setRollNo(4);
+        s1.setsName("sahin");
+        s1.setRollNo(5);
         s1.setsAge(21);
         Student s2 = null;
 
@@ -26,16 +26,25 @@ public class Main {
                         .buildSessionFactory();             //config.buildSessionFactory();
         Session session = sf.openSession();
 
-//        Transaction transaction = session.beginTransaction(); //Transaction is an interface, For that we to call `session.beginTransaction();` it returns a Transaction Object!
+        Transaction transaction = session.beginTransaction(); //Transaction is an interface, For that we to call `session.beginTransaction();` it returns a Transaction Object!
 
             //Save data into DB;
 //        session.persist(s1);
 
-        s2 = session.find(Student.class,4);
+//              Fetching The data from Database
+//        s2 = session.find(Student.class,4);
 
 
 
-//        transaction.commit();
+        //Update the Object value from the database
+//        session.merge(s1); //If data in present in the database It'll change the data,Else it'll insert the Data!
+
+
+        //Delete Data from Database
+        s2 = session.find(Student.class,5);
+        session.remove(s2);
+
+        transaction.commit();
 
 
 
@@ -43,6 +52,6 @@ public class Main {
         sf.close();
 
 
-        System.out.println(s2);
+        System.out.println(s1);
     }
 }
