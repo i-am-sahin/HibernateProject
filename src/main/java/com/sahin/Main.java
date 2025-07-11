@@ -15,11 +15,17 @@ public class Main {
 
 
         Configuration config = new Configuration();
+        config.addAnnotatedClass(com.sahin.Student.class);
+        config.configure(); //this file loads the xml
+
+
         SessionFactory sf = config.buildSessionFactory();
         Session session = sf.openSession();
 
+        Transaction transaction = session.beginTransaction(); //Transaction is an interface, For that we to call `session.beginTransaction();` it returns a Transaction Object!
 
         session.persist(s1);
+        transaction.commit();
 
 
         System.out.println(s1);

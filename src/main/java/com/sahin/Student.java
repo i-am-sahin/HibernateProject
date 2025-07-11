@@ -1,7 +1,12 @@
 package com.sahin;
 
-public class Student {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+//This class need to be represented the database and Hibernate will take care it!
+@Entity
+public class Student {
+    @Id
     private int rollNo;
     private String sName;
     private int sAge;

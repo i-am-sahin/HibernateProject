@@ -1,0 +1,24 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+
+<!--        Declaring the Driver -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+<!--        Declaring the DataBase URL-->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sahin</property>
+
+<!--     Declaring the DataBase Username   -->
+        <property name="hibernate.connection.username">postgres</property>
+
+        <!--     Declaring the DataBase Password   -->
+        <property name="hibernate.connection.password">****</property>
+
+
+<!--    If the table is not exists in the DB Hibernate will automatically create It!    -->
+
+<!--     hbm2ddl -> hibernate to data Defination language    -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        
+        
+    </session-factory>
+</hibernate-configuration>
