@@ -14,12 +14,13 @@ public class Main {
 //        Student s2 = null;
 
         Laptop l1 = new Laptop();
+        l1.setLid(1);
         l1.setBrand("MSI");
         l1.setModel("GF63");
         l1.setRam(16);
 
         Alien a1 = new Alien();
-        a1.setAid(1);
+        a1.setAid(101);
         a1.setAname("Sahin");
         a1.setTech("Java");
         a1.setLaptop(l1);
@@ -33,6 +34,7 @@ public class Main {
 
         SessionFactory sf =  new Configuration()
                     .addAnnotatedClass(com.sahin.Alien.class)
+                .addAnnotatedClass(com.sahin.Laptop.class)
                 .configure()
                         .buildSessionFactory();             //config.buildSessionFactory();
         Session session = sf.openSession();
@@ -41,7 +43,7 @@ public class Main {
 
             //Save data into DB;
 //        session.persist(s1);
-
+        session.persist(l1);
         session.persist(a1);
 
 //              Fetching The data from Database
