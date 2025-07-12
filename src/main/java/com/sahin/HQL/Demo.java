@@ -30,8 +30,10 @@ public class Demo {
 
         //select * from Laptop_From_HQL where lid=2; --> SQL
         //from Laptop_From_HQL where lid=2 --> HQL
+        String brand = "Dell";
+        int ram = 8;
+        Query query = s.createQuery("from Laptop_From_HQL where brand ='apple'");
 
-        Query query = s.createQuery("from Laptop_From_HQL");
        List<Laptop_From_HQL> laptops =  query.getResultList();
         System.out.println(laptops);
 
