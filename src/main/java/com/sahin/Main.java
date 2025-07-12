@@ -13,12 +13,16 @@ public class Main {
 //        s1.setsAge(21);
 //        Student s2 = null;
 
-
+        Laptop l1 = new Laptop();
+        l1.setBrand("MSI");
+        l1.setModel("GF63");
+        l1.setRam(16);
 
         Alien a1 = new Alien();
         a1.setAid(1);
         a1.setAname("Sahin");
         a1.setTech("Java");
+        a1.setLaptop(l1);
 
 
 
@@ -42,6 +46,7 @@ public class Main {
 
 //              Fetching The data from Database
 //        s2 = session.find(Student.class,4);
+        Alien a2 = session.find(Alien.class,1);
 
 
 
@@ -62,5 +67,6 @@ public class Main {
 
 
 //        System.out.println(s1);
+        System.out.println(a2);
     }
 }

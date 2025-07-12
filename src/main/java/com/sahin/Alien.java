@@ -4,17 +4,19 @@ package com.sahin;
 import jakarta.persistence.*;
 
 @Entity   //(name = "alien_table")
-@Table(name = "alien_table") //This is the table name in the database
+//@Table(name = "alien_table") //This is the table name in the database
 public class Alien {
     @Id
     private int aid;
-    @Column(name ="alien_name")
+//    @Column(name ="alien_name")
     private String aname;
 
-    @Transient //This field will not be stored in the database
+//    @Transient //This field will not be stored in the database
 
-//    sometime, when you build application, you want certain fields to be therefor the processing, right?Maybe you want to perform some operation,maybe you want to store some data only in the object but not in database.
+        //    sometime, when you build application, you want certain fields to be therefor the processing, right?Maybe you want to perform some operation,maybe you want to store some data only in the object but not in database.
     private String tech;
+
+    private Laptop laptop;
 
     public int getAid() {
         return aid;
@@ -40,12 +42,21 @@ public class Alien {
         this.tech = tech;
     }
 
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
     @Override
     public String toString() {
         return "Alien{" +
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
                 '}';
     }
 }
