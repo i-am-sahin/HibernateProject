@@ -4,15 +4,22 @@ import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        Student s1 = new Student();
-        s1.setsName("sahin");
-        s1.setRollNo(5);
-        s1.setsAge(21);
-        Student s2 = null;
+//        Student s1 = new Student();
+//        s1.setsName("sahin");
+//        s1.setRollNo(5);
+//        s1.setsAge(21);
+//        Student s2 = null;
+
+
+
+        Alien a1 = new Alien();
+        a1.setAid(1);
+        a1.setAname("Sahin");
+        a1.setTech("Java");
+
 
 
 //        Configuration config = new Configuration();
@@ -21,7 +28,7 @@ public class Main {
 
 
         SessionFactory sf =  new Configuration()
-                    .addAnnotatedClass(com.sahin.Student.class)
+                    .addAnnotatedClass(com.sahin.Alien.class)
                 .configure()
                         .buildSessionFactory();             //config.buildSessionFactory();
         Session session = sf.openSession();
@@ -30,6 +37,8 @@ public class Main {
 
             //Save data into DB;
 //        session.persist(s1);
+
+        session.persist(a1);
 
 //              Fetching The data from Database
 //        s2 = session.find(Student.class,4);
@@ -41,8 +50,8 @@ public class Main {
 
 
         //Delete Data from Database
-        s2 = session.find(Student.class,5);
-        session.remove(s2);
+//        s2 = session.find(Student.class,5);
+//        session.remove(s2);
 
         transaction.commit();
 
@@ -52,6 +61,6 @@ public class Main {
         sf.close();
 
 
-        System.out.println(s1);
+//        System.out.println(s1);
     }
 }

@@ -16,7 +16,7 @@
 <!--    If the table is not exists in the DB Hibernate will automatically create It!    -->
 
 <!--     hbm2ddl -> hibernate to data Defination language    -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         
 <!--     Showing the SQL Query that are running behind the scene   -->
         <property name="hibernate.show_sql">true</property>
