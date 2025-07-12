@@ -20,6 +20,7 @@ public class Main {
         l1.setModel("GF63");
         l1.setRam(16);
 
+
         Laptop l2 = new Laptop();
         l2.setLid(2);
         l2.setBrand("DELL");
@@ -31,6 +32,9 @@ public class Main {
         a1.setAname("Sahin");
         a1.setTech("Java");
         a1.setLaptops(Arrays.asList(l1, l2));
+
+        l1.setAlien(a1);
+        l2.setAlien(a1);
 
 
 

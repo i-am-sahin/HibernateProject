@@ -10,7 +10,7 @@
         <property name="hibernate.connection.username">postgres</property>
 
         <!--     Declaring the DataBase Password   -->
-        <property name="hibernate.connection.password">0000</property>
+        <property name="hibernate.connection.password">****</property>
 
 
 <!--    If the table is not exists in the DB Hibernate will automatically create It!    -->
