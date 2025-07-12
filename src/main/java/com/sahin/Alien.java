@@ -3,6 +3,8 @@ package com.sahin;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity   //(name = "alien_table")
 //@Table(name = "alien_table") //This is the table name in the database
 public class Alien {
@@ -15,8 +17,10 @@ public class Alien {
 
         //    sometime, when you build application, you want certain fields to be therefor the processing, right?Maybe you want to perform some operation,maybe you want to store some data only in the object but not in database.
     private String tech;
-@OneToOne
-    private Laptop laptop;
+//@OneToOne
+    @OneToMany
+    private List<Laptop> laptops;
+
 
     public int getAid() {
         return aid;
@@ -42,13 +46,15 @@ public class Alien {
         this.tech = tech;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
+    public List<Laptop> getLaptops() {
+        return laptops;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
+
+
 
     @Override
     public String toString() {
@@ -56,7 +62,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
-                ", laptop=" + laptop +
+                ", laptop=" + laptops +
                 '}';
     }
 }
