@@ -32,10 +32,14 @@ public class Demo {
         //from Laptop_From_HQL where lid=2 --> HQL
         String brand = "Asus";
         int ram = 8;
-        Query query = s.createQuery("select model from Laptop_From_HQL where brand like ?1");
+        Query query = s.createQuery("select brand , model from Laptop_From_HQL where brand like ?1");
         query.setParameter(1,brand);
 //        query.setParameter(2,ram);
-       List<String> laptops =  query.getResultList();
+       List<Object[]> laptops =  query.getResultList();
+
+       for(Object[] data : laptops){
+           System.out.println((String) data[0] + " " + (String) data[1]);
+       }
         System.out.println(laptops);
 
 
