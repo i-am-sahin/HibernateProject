@@ -18,8 +18,12 @@ public class Alien {
         //    sometime, when you build application, you want certain fields to be therefor the processing, right?Maybe you want to perform some operation,maybe you want to store some data only in the object but not in database.
     private String tech;
 //@OneToOne
-    @OneToMany(mappedBy = "alien")
+//    @OneToMany(mappedBy = "alien")
+    @ManyToMany
     private List<Laptop> laptops;
+
+
+
 
 
 
