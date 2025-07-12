@@ -19,7 +19,7 @@ public class Alien {
     private String tech;
 //@OneToOne
 //    @OneToMany(mappedBy = "alien")
-    @OneToMany
+    @OneToMany(fetch= FetchType.EAGER) //Convert It to EAGER to fetch the laptops immediately
     private List<Laptop> laptops;
 
 
