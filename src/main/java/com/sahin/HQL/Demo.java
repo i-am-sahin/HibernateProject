@@ -30,20 +30,31 @@ public class Demo {
 
         //select * from Laptop_From_HQL where lid=2; --> SQL
         //from Laptop_From_HQL where lid=2 --> HQL
-        String brand = "Asus";
-        int ram = 8;
-        Query query = s.createQuery("select brand , model from Laptop_From_HQL where brand like ?1");
-        query.setParameter(1,brand);
-//        query.setParameter(2,ram);
-       List<Object[]> laptops =  query.getResultList();
+//        String brand = "Asus";
+//        int ram = 8;
+//        Query query = s.createQuery("select brand , model from Laptop_From_HQL where brand like ?1");
+//        query.setParameter(1,brand);
+////        query.setParameter(2,ram);
+//       List<Object[]> laptops =  query.getResultList();
+//
+//       for(Object[] data : laptops){
+//           System.out.println((String) data[0] + " " + (String) data[1]);
+//       }
+//        System.out.println(laptops);
 
-       for(Object[] data : laptops){
-           System.out.println((String) data[0] + " " + (String) data[1]);
-       }
-        System.out.println(laptops);
+        //If we are not printing the result,this find method still run query, Because it is Eager loading
+        Laptop_From_HQL laptop = s.find(Laptop_From_HQL.class,1);  //get is deprecated and replaced by find
+        System.out.println(laptop);
+
+
+        //If we are not printing the result,this find method not run the query, Because it is lazy loading
+        Laptop_From_HQL laptop1 = s.byId(Laptop_From_HQL.class).getReference(1);   //load is  deprecated and replaced by byId(class).getReference(referenceId).
+//        System.out.println(laptop1);
+
 
 
         s.close();
+        sf.close();
 
 
     }
