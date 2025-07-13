@@ -27,6 +27,11 @@
 <!--    Formating the SQL Query    -->
 <!--        <property name="hibernate.format_sql">true</property>-->
 
+<!--            Addind those things are optional for Level 2 cache-->
+        <!--        <property name="hibernate.cache.use_second_level_cache">true</property>-->
+        <!--        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>-->
+        <!--        <property name="hibernate.jakarta.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>-->
+
         
         
     </session-factory>
