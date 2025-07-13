@@ -48,12 +48,15 @@ public class Demo {
 
 
         //If we are not printing the result,this find method not run the query, Because it is lazy loading
-        Laptop_From_HQL laptop1 = s.byId(Laptop_From_HQL.class).getReference(1);   //load is  deprecated and replaced by byId(class).getReference(referenceId).
+//        Laptop_From_HQL laptop1 = s.byId(Laptop_From_HQL.class).getReference(1);   //load is  deprecated and replaced by byId(class).getReference(referenceId).
 //        System.out.println(laptop1);
 
 
 
         s.close();
+        Session s2 = sf.openSession();
+        Laptop_From_HQL laptop2 = s2.find(Laptop_From_HQL.class,1);
+        System.out.println(laptop2);
         sf.close();
 
 

@@ -6,6 +6,7 @@ import java.util.List;
 
 
 @Entity
+@Cacheable
 public class Laptop_From_HQL {
     @Id
     private int lid;
