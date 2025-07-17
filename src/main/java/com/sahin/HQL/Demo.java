@@ -50,6 +50,7 @@ public class Demo {
         //If we are not printing the result,this find method not run the query, Because it is lazy loading
 //        Laptop_From_HQL laptop1 = s.byId(Laptop_From_HQL.class).getReference(1);   //load is  deprecated and replaced by byId(class).getReference(referenceId).
 //        System.out.println(laptop1);
+//        Laptop_From_HQL l = s.load(Laptop_From_HQL.class,1);
 
 
 
